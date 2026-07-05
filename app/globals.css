@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 7%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 7%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 7%;
+    --primary: 0 0% 7%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 17% 98%;
+    --secondary-foreground: 0 0% 7%;
+    --muted: 210 17% 98%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 76% 56%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 76% 56%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 0 0% 7%;
+    --radius: 0.75rem;
+  }
+  html, body { background: #ffffff; color: #111111; }
+  body { font-family: var(--font-jakarta), system-ui, sans-serif; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3, h4, h5, h6 { font-family: var(--font-sora), system-ui, sans-serif; letter-spacing: -0.02em; }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .text-pretty { text-wrap: pretty; }
+  .grid-bg {
+    background-image:
+      linear-gradient(to right, rgba(17,17,17,0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(17,17,17,0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .mask-fade-y {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+            mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+  }
+  .mask-fade-x {
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+}
+
+.hero-glow {
+  position: absolute;
+  inset: -20% -10% auto -10%;
+  height: 520px;
+  background: radial-gradient(60% 50% at 50% 0%, rgba(229,57,53,0.10) 0%, rgba(229,57,53,0) 60%);
+  pointer-events: none;
+  z-index: 0;
+}
